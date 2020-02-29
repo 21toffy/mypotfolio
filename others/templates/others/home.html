@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% load static %}
+    {% load crispy_forms_tags %}
+    
+
+
+
+    
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" />
+    <script src="https://code.iconify.design/1/1.0.4/iconify.min.js"></script>
+    <meta charset="utf-8">
+
+    <title>
+
+    </title>
+
+</head>
+
+<body>
+    <style>
+        body{
+            font-family: 'Times New Roman', Times, serif;
+        }
+        .jumbotron {
+            background: url ('https://ibb.co/56Cdst4') no-repeat center center;
+            -webkit-background-size: 100% 100%;
+            -moz-background-size: 100% 100%;
+            -o-background-size: 100% 100%;
+            background-size: 100% 100%;
+        }
+
+        .space {
+            margin-top: 2px;
+        }
+
+        .valued {
+            color: rgb(0, 162, 232);
+        }
+
+        body {
+
+            color: rgb(0, 0, 81);
+        }
+
+        .twin1 {
+            background-color: white;
+            padding-top: 50px;
+            padding-bottom: 100px;
+        }
+
+        .twin2 {
+            color: #e9e9e9;
+            background-color: #e43c5c;
+            padding-top: 50px;
+            padding-bottom: 100px;
+        }
+
+        nav a:hover {
+            color: #1A1A1A;
+            background: rgb (255, 255, 255);
+        }
+
+        .cta-1,
+        .cta2 {
+            /* background-color: #e43c5c; */
+            background-color: white;
+            padding: 70px 0px 70px 0px;
+            margin-top: 0px;
+        }
+
+        .jumbo {
+            padding: 30px 0px 70px 0px;
+            margin-bottom: 0px;
+            /* background-image: url('../../static/image/background.png'); */
+            background-position: center;
+            background-color: #ecb390;
+
+
+        }
+
+        .mainDiv {
+            background-image: url ('../../static/image/tofunmi.png');
+        }
+
+
+        .section-padding {
+            padding: 40px 0px;
+        }
+
+        .page-title {
+            margin-bottom: 40px;
+            text-align: center;
+
+        }
+
+        .services-H1 {
+            color: #e43c5c;
+            text-align: center;
+        }
+
+        .pg-titl-bdr-btm {
+            width: 100px;
+            height: 3px;
+            background-color: black;
+        }
+
+        .service-box {
+            margin: 0 0 60px;
+            display: inline-block;
+        }
+
+        .image {
+            opacity: 1;
+            display: block;
+            width: 100%;
+            height: auto;
+            transition: .5s ease;
+            backface-visibility: hidden;
+        }
+
+        .middle {
+            transition: .5s ease;
+            opacity: 0;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            text-align: center;
+        }
+
+        .container:hover .image {
+            opacity: 0.3;
+        }
+
+        .container:hover .middle {
+            opacity: 1;
+        }
+
+        div.e:hover {
+            background-color: #216353;
+        }
+
+        .text {
+            color: white;
+            font-size: 16px;
+        }
+
+        .service-box .service-text h3 {
+            padding-top: 15px;
+        }
+
+        .three-layered :hover {
+            background-color: #40e0d0;
+        }
+
+        .seo-optimized :hover {
+            background-color: #f1c6d3;
+        }
+
+        .cloud-services :hover {
+            background-color: #65587f;
+        }
+
+        .site-maintenance :hover {
+            background-color: #6a8caf;
+        }
+    </style>
+    <nav class="navbar navbar-xs navbar-expand-sm navbar-dark bg-dark" style="padding-top:    0.25rem; /* 0px does not look good on small screens */
+        padding-bottom: 0.25rem;
+        font-size: medium;      /* Just because I am using big size font */
+        line-height: 1em;">
+        <a class="navbar-brand" href="{% url 'others:home' %}">tofunmi</a>
+        <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarsExample09"
+            aria-controls="navbarsExample09" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="navbar-collapse collapse" id="navbarsExample09" style="">
+            <ul class="navbar-nav mr-auto mx-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Résumé <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#about_section" >About</a>
+                </li>
+                <li class="nav-item">
+                        <a class="nav-link" href="#project_section">projects</a>
+                    </li>
+                    <li class="nav-item">
+                            <a class="nav-link" href="#contact_section">Contact moi</a>
+                        </li>
+
+                  
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="" id="dropdown09" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false"><span class="iconify" data-icon="bx:bx-dots-horizontal-rounded" data-inline="false"></span></a>
+                    <div class="dropdown-menu" aria-labelledby="dropdown09">
+                        <a class="dropdown-item" href="#services_section">services offered<a>
+                        <a class="dropdown-item" href="#">Blog<small>(comming soon)</small></a>
+                  
+                    </div>
+                </li>
+            </ul>
+
+        </div>
+    </nav>
+
+
+    <div class="jumbotron jumbo">
+        <div class="container">
+            {% for tofunmi in about %}
+
+
+            <img class="img-thumbnail" class="d-block w-100" src="{{tofunmi.image1.url}}" alt="First slide" width="200"
+                height="40" class="center">
+            {% endfor %}
+        </div>
+
+        <div class="container center">
+            <h2 class="subheading">Hello I'm</h2>
+            <h1 class="mb-4">Tofunmi</h1>
+            <h4>
+                an entry-level backend web developer, 🐍Python programmer and cloud architect.
+                </h6>
+
+        </div>
+
+    </div>
+
+
+
+    <hr>
+
+
+
+    <div class="row space">
+        <div class="col-md-6 twin1">
+            <div class="container valued">
+
+
+                <div class="container ">
+
+                    <h2 class="text-left"><span class="iconify" data-icon="mdi-light:diamond" data-inline="false"></span>&nbsp  Valued Deliverables</h2>
+                    <h6 class="text-left">
+                        you having a website that meets your requirements and above all your needs.
+                    </h6>
+                </div><br>
+
+                <div class="container ">
+
+                    <h2 class="text-left"><span class="iconify" data-icon="et:wallet" data-inline="false"></span>&nbsp  Affordable Services </h2>
+                    <h6 class="text-left">
+                        Plans that meets your budget, as little as it may be, theres is always a plan for it.
+                    </h6>
+                </div><br>
+
+                <div class="container ">
+                    <h2 class="text-left"><span class="iconify" data-icon="uil:arrow-growth" data-inline="false"></span>&nbsp  Scalable</h2>
+                    <h6 class="text-left">
+
+                        website that are 100% scalable, they would grow in acordace to your needs and can be integrated with
+                        almost any frontend technology of your choice.
+                    </h6>
+                </div><br>
+
+
+
+
+
+                <div class="container ">
+                    <h2 class="text-left"><span class="iconify" data-icon="ic:baseline-vpn-lock" data-inline="false"></span>&nbsp  Secure </h2>
+
+
+                    <h6 class="text-left">
+                        security is the most important of all the other features listed that is why we take time to fool
+                        proof your website on the server, logic and client level. we also take advantage of cutting edge
+                        cloud technologies to protect your data from both internal and external threats
+                    </h6>
+
+                </div><br>
+
+            </div>
+        </div>
+        <a name="about_section"></a>
+
+        <div class="col-md-6 twin2">
+            <div class="container">
+                <h2 class="text-left">About Me</h2>
+                <p class="text-left">Nigerian born IT professional. temporarily a backend web developer i am a
+                    challenge driven person with intense opassion for learning new technologoes and executing those
+                    knowledge to complete tasks in any environment i find my self where growth is important. less i
+                    forget Lagos State University</p><br>
+            </div>
+
+            <div class="container text-left">
+                <h2 class="text-left">what i know</h2>
+                <p>
+
+                    i have proficiency in python and Django, 
+                    i am also a cloud entusiast with vast knowledge in several
+                    AWS services (Ec2, ElasticBeanstalk, IAM, S3, EBS and RDB). 
+                    I have more than sufficient knowledge in
+                    html, css, bootstrap, and jquery 
+                    as i have used each of the technologoes listed above in not less
+                    than two projects
+
+                </p>
+            </div>
+
+
+
+
+            
+        </div>
+
+
+    </div>
+
+
+
+    <hr>
+
+
+
+
+
+
+<a name='services_section'></a>
+    <div class="container mt-5" id="about">
+        <h1 class="text-center py-4">services i offer</h1>
+
+        <div class="row text-center mt-5">
+
+
+            <div class="col-md-3 three-layered ">
+                <div class="card shadow">
+                    <div class="card-body">
+                        <div class="py-3 text-center">
+                            <div class="row">
+
+                                <div class="col-lg-4 col-sm-4 col-md-4">
+                                    <i class="fa fa-lock card-img-top fa-4x text-danger" aria-hidden="true"></i>
+                                </div>
+                                <div class="col-lg-4 col-sm-4 col-md-4">
+                                    <i class="fa fa-lock card-img-top fa-4x text-warning" aria-hidden="true"></i>
+                                </div>
+                                <div class="col-lg-4 col-sm-4 col-md-4">
+                                    <i class="fa fa-lock card-img-top fa-4x text-success" aria-hidden="true"></i>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <h4 class="card-title">Three layered secure web apps</h4>
+                            <p class="card-text">You can use this theme as personal as well as for commercial purpose &
+                                can
+                                customise it. </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3 seo-optimized ">
+                <div class="card shadow">
+                    <div class="card-body">
+                        <div class="py-3 text-center"> <i class="fa fa-bar-chart card-img-top fa-4x text-danger"
+                                aria-hidden="true"></i></div>
+                        <div class="card-body">
+                            <h4 class="card-title">SEO Optimization</h4>
+                            <p class="card-text">
+                                Get your website easily discovered on search engines and better visitor-customer
+                                conversion chance
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-md-3 cloud-services ">
+                <div class="card shadow">
+                    <div class="card-body">
+                        <div class="py-3 text-center"> <i class="fa fa-cloud card-img-top fa-4x text-info"
+                                aria-hidden="true"></i></div>
+                        <div class="card-body">
+                            <h4 class="card-title">Cloud services</h4>
+                            <p class="card-text">
+                                offer varius AWS services in accordance to your needs e.g setting up IAM and assigning
+                                roles and permissions bases on your companes structures.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-md-3 site-maintenance ">
+                <div class="card shadow">
+                    <div class="card-body">
+                        <div class="py-3 text-center"> <i class="fa fa-wrench card-img-top fa-4x text-secondary"
+                                aria-hidden="true"></i></div>
+                        <div class="card-body">
+                            <h4 class="card-title">Site Maintenance</h4>
+                            <p class="card-text">
+                                Provides site maintenance and make both UI and contents changes as often as possible
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    </div>
+    </div>
+
+
+
+    <hr>
+
+<a name='project_section'></a>
+    <div class="jumbotron" style="background-color: white;">
+        <div class="container text-center page-title">
+            <div class="row no-gutters">
+
+                {% for tofunmi in job %}
+
+
+                <div class="col-md-3 e">
+                    <a href="{{tofunmi.url}}"
+                        class="photography-entry img d-flex justify-content-center align-items-center"></a>
+                    <div class="overlay"></div>
+                    <div class="text text-center e">
+                        <img src="{{tofunmi.image.url}}" class="image">
+                        <br>
+                        <div class="middle">
+                            <div class="text">{{tofunmi.title}}</div>
+                        </div>
+                    </div>
+                    </a>
+                </div>
+                <hr>
+
+                {% endfor %}
+
+            </div>
+        </div>
+    </div>
+    <hr>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="container text-left">
+                    <h1 class="text-center">My skills</h1>
+                    <ul>
+                        <h3>
+                            <li>Python &nbsp;<span class="iconify" data-icon="logos:python" data-inline="false"></span>
+                            </li>
+                        </h3><br><br>
+                        <h3>
+                            <li>Django &nbsp;<span class="iconify" data-icon="logos:django" data-inline="false"></span>
+                            </li>
+                        </h3><br><br>
+                        <h3>
+                            <li>Django Rest &nbsp;<span class="iconify" data-icon="mdi:api" data-inline="false"></span>
+                            </li>
+                        </h3><br><br>
+                        <h3>
+                            <li>Amazon Web Srvices&nbsp;<span class="iconify" data-icon="logos:aws"
+                                    data-inline="false"></span></li>
+                        </h3><br><br>
+                        <h3>
+                            <li>html/css/Bootstrap &nbsp;<span class="iconify" data-icon="el:css"
+                                    data-inline="false"></span>/<span class="iconify" data-icon="logos:html-5"
+                                    data-inline="false"></span></li>
+                        </h3>
+
+
+                    </ul>
+                </div>
+
+            </div>
+            <hr>
+            <hr>
+
+<a name='contact_section'></a>
+            <div class="col-sm-6 twin2">
+                <div class="container">
+                    <p></p>
+
+                    <h3>HAVE A COOL WEB PROJECT YOU NEED ME TO WORK WITH YOU ON?</h3>
+                    <p>please make sure to hit me up with either this form below</p>
+                    {% if messages %}
+                    <ul class="messages">
+                        {% for message in messages %}
+                        <li {% if message.tags %} class="{{message.tags}}" {% endif %}>{{ message }}</li>
+                        {% endfor %}
+                    </ul>
+                    {% endif %}
+
+
+                    <form method="POST">
+
+                        {% csrf_token %}
+                        <div class="form-group text-left">
+                            {{ form.error }}
+                            {{ form.label_tag }}
+                            {{ form | crispy }}
+                        </div>
+                        <input type="submit" class="btn btn-outline-success" value="send" />
+                    </form><br>
+                    <h4>
+
+                        Or you can catch me on <a href="https://api.whatsapp.com/send?phone=2348023178165"><span class="iconify" data-icon="logos:whatsapp" data-inline="false"></span></a>
+                    </h4>
+
+                </div>
+            </div>
+        </div>
+    </div>
+<br>
+
+
+
+    <footer class=" "  margin-bottom: 0px;">
+            <span class="iconify" data-icon="icons8:copyright" data-inline="false"></span><small>2020 Built with <span class="iconify" data-icon="emojione-v1:heart-left-tip" data-inline="false"></span>, Tofunmi Okedeji</small>&nbsp; <a href="https://www.linkedin.com/in/tofunmi-okedeji-66b555168/"><span class="iconify" data-icon="logos:linkedin" data-inline="false"></span></a>&nbsp;&nbsp;<a href="https://twitter.com/tofunmi_boy"><span class="iconify" data-icon="logos:twitter" data-inline="false"></span></a>
+          </footer>
+
+</body>
+<script src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+<script src="{% static 'js/main.js' %}"></script>
+
+</html>

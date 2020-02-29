@@ -1,0 +1,7 @@
+<form action=".">
+        {% csrf_token %}
+        {{form.as_p}}
+        <div class="form-actions">
+            <button type="submit">sender</button>
+        </div>
+</form>
