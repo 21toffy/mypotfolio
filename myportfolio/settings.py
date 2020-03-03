@@ -14,7 +14,7 @@ SECRET_KEY = '^e1gmgbq17c6$4$h3mc0@crr(2^*937$6(*v0u#@l&*rebjg7a'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['ec2-18-218-232-223.us-east-2.compute.amazonaws.com', '127.0.0.1']
 
 
 # Application definition
@@ -114,11 +114,14 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+
+STATIC_ROOT = os.path.join(BASE_DIR, "static/")
+
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR,'static')
     ]
 
-STATIC_ROOT = os.path.join(BASE_DIR, "root")
+# STATIC_ROOT = os.path.join(BASE_DIR, "root")
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
