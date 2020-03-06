@@ -8,12 +8,11 @@
     {% load crispy_forms_tags %}
     
 
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     
-    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" />
-    <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}" />
-    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
     <script src="https://code.iconify.design/1/1.0.4/iconify.min.js"></script>
     <meta charset="utf-8">
 
@@ -219,12 +218,12 @@
             {% for tofunmi in about %}
 
 
-            <img class="img-thumbnail" class="d-block w-100" src="{{tofunmi.image1.url}}" alt="First slide" width="200"
+            <img class="img-thumbnail mx-auto d-block" src="{{tofunmi.image1.url}}" alt="First slide" width="200"
                 height="40" class="center">
             {% endfor %}
         </div>
 
-        <div class="container center">
+        <div class="container text-center">
             <h2 class="subheading">Hello I'm</h2>
             <h1 class="mb-4">Tofunmi</h1>
             <h4>
@@ -301,7 +300,7 @@
             </div>
 
             <div class="container text-left">
-                <h2 class="text-left">what i know</h2>
+                <h2 class="text-left">what I know</h2>
                 <p>
 
                     i have proficiency in python and Django, 
@@ -335,7 +334,7 @@
 
 <a name='services_section'></a>
     <div class="container mt-5" id="about">
-        <h1 class="text-center py-4">services i offer</h1>
+        <h1 class="text-center py-4">services I offer</h1>
 
         <div class="row text-center mt-5">
 
@@ -531,13 +530,13 @@
 
 
 
-    <footer class=" "  margin-bottom: 0px;">
+    <footer class="text-center "  margin-bottom: 0px;">
             <span class="iconify" data-icon="icons8:copyright" data-inline="false"></span><small>2020 Built with <span class="iconify" data-icon="emojione-v1:heart-left-tip" data-inline="false"></span>, Tofunmi Okedeji</small>&nbsp; <a href="https://www.linkedin.com/in/tofunmi-okedeji-66b555168/"><span class="iconify" data-icon="logos:linkedin" data-inline="false"></span></a>&nbsp;&nbsp;<a href="https://twitter.com/tofunmi_boy"><span class="iconify" data-icon="logos:twitter" data-inline="false"></span></a>
           </footer>
 
 </body>
-<script src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
-<script src="{% static 'js/bootstrap.min.js' %}"></script>
-<script src="{% static 'js/main.js' %}"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
 </html>
