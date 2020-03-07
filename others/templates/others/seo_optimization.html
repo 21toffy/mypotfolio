@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+
+{% block body %}
+
+<div class="jumbotron" style="background-image: url(https://i.ibb.co/sjzn6f8/hacker-1944688.jpg); background-size: 100%;">
+    <div class="container for-about">
+    <h1 style="color: white;">search engine optimization</h1>
+    </div>
+ </div>
+
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6">
+                <div class="container">
+                        <div class="container text-center">
+                            <h5>
+                                    Web application security is a branch of information security that deals specifically with security of websites, web applications, web services and web systems at a high level.
+                            </h5>
+                            <h5>
+                    
+                                We implement robust security solutions that ensure your webapp is protected and your data is safe. Key services are identity access and management control, multi layered security on 3 levels to be precise, amongst others depending on the requirement per organization.
+                            </h5>
+                        </div>
+                    </div>
+        </div>
+        <div class="col-md-6">
+                <h3 class="text-center">contact me below</h3>
+                <form method="POST">
+
+                        {% csrf_token %}
+                        <div class="form-group text-left">
+                            {{ form.error }}
+                            {{ form.label_tag }}
+                            {{ form|crispy }}
+                        </div>
+                        <input type="submit" class="btn btn-outline-success" value="send" />
+                    </form><br>
+        </div>
+    </div>
+</div>
+{% endblock body %}
