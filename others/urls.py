@@ -2,7 +2,6 @@ from . import views
 from django.urls import path
 
 import others.views
-from django.conf.urls import handler404, handler500
 
 app_name='others'
 
