@@ -220,9 +220,13 @@
         <div class="container">
             {% for tofunmi in about %}
 
-
+            
+            {% if tofunmi.image1 %}
+                
+            
             <img class="img-thumbnail mx-auto d-block" src="{{tofunmi.image1.url}}" alt="First slide" width="200"
-                height="40" class="center">
+            height="40" class="center">
+            {% endif %}
             {% endfor %}
         </div>
 
@@ -296,25 +300,21 @@
         <div class="col-md-6 twin2">
             <div class="container">
                 <h2 class="text-left">About Me</h2>
-                <p class="text-left">I am Nigerian born IT professional. temporarily a backend web developer and i am a
-                    challenge driven person with intense passion for learning new technologies and executing the
-                    knowledge to complete tasks in any environment i find my self where growth is important. less i
-                    forget Lagos State University</p><br>
+                {% for tofunmi in about %}
+                  
+                <p class="text-left">{{tofunmi.about_me}}</p><br>
+                {% endfor %}
             </div>
 
             <div class="container text-left">
                 <h2 class="text-left">what I know</h2>
+                {% for tofunmi in about %}
                 <p>
 
-                    I  have proficiency in python and Django, 
-                    I am also a cloud entusiast with vast knowledge in several
-                    AWS services (Ec2, ElasticBeanstalk, IAM, S3, EBS and RDB). 
-                    I have more than sufficient knowledge in
-                    html, css, bootstrap, and jquery 
-                    as I have used each of the technologoes listed above in nothing less
-                    than two projects each.
-
+                    
+                    {{tofunmi.offer}}
                 </p>
+                {% endfor %}
             </div>
 
 

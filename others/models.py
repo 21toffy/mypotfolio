@@ -10,6 +10,7 @@ class About_Me(models.Model):
     image1 = models.ImageField(upload_to="images/", blank=True, null=True)
     image2 = models.ImageField(upload_to="images/", blank=True, null=True)
     about_me=models.TextField()
+    offer=models.TextField(null=True, blank=True)
 
 
     def __str__(self):
