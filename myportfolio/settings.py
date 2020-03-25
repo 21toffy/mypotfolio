@@ -16,7 +16,7 @@ SECRET_KEY = '^e1gmgbq17c6$4$h3mc0@crr(2^*937$6(*v0u#@l&*rebjg7a'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['ec2-3-14-7-183.us-east-2.compute.amazonaws.com', '3.14.7.183', '127.0.0.1', 'localhost']
+ALLOWED_HOSTS = ['ec2-3-15-194-168.us-east-2.compute.amazonaws.com', '3.15.194.168', '127.0.0.1', 'localhost']
 #for this
 
 # Application definition
@@ -72,12 +72,8 @@ WSGI_APPLICATION = 'myportfolio.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql', 
-        'NAME': 'tofunmi', 
-        'USER': 'postgres', 
-        'PASSWORD': 'toffy123', 
-        'HOST': '127.0.0.1', 
-        'PORT': '5432',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
 
