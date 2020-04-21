@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from .models import Services, About_Me
 from jobs.models import Job
-
+from django.urls import reverse
 from .forms import ContactForm
 from django.core.mail import send_mail, BadHeaderError
 from django.http import HttpResponse, HttpResponseRedirect
@@ -16,17 +16,23 @@ def home(request):
     if request.method=='POST':
         form = ContactForm(request.POST)
         if form.is_valid():
-            email = form.cleaned_data['email']
             subject = form.cleaned_data['subject']
             message = form.cleaned_data['message']
-            message="{0} has sent you a new message:\n\n{1}".format(email, forms.cleaned_data[message])
-            send_mail=('NEW Enquiry', message, subject, ['oketofoke@gmail.com'])
-            return HttpResponse('success thank you for your message.')
+            email = form.cleaned_data['email']
+            cc_myself = form.cleaned_data['cc_myself']
+
+            recipients = ['oketofoke@gmail.com']
+            if cc_myself:
+                recipients.append(email)
+
+            send_mail(subject, message, email, recipients)
+            return HttpResponseRedirect(reverse('others:home'))
+
+            # return HttpResponseRedirect('others:home')
     else:
         form = ContactForm()
     context= {'serviceo':serviceo, 'about':about, 'job':job, 'form':form}
     return render(request, 'others/home.html', context)
-    pass
 
 def contact(request):
     pass
