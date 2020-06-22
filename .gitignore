@@ -9,7 +9,7 @@ db.sqlite3
 /media
 media
 
-
+settings_local.py
 .env
 .venv
 env/

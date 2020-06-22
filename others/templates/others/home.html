@@ -19,6 +19,8 @@
 
     <script src="https://code.iconify.design/1/1.0.4/iconify.min.js"></script>
     <meta charset="utf-8">
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&amp;lang=en" />
+
 
     <title>
 
@@ -59,8 +61,8 @@
         }
 
         .twin2 {
-            color: #e9e9e9;
-            background-color: #e43c5c;
+            color: rgb(0, 0, 81);
+            background-color: #F8F8F8;
             padding-top: 50px;
             padding-bottom: 100px;
         }
@@ -83,7 +85,7 @@
             margin-bottom: 0px;
             /* background-image: url('../../static/image/background.png'); */
             background-position: center;
-            background-color: #ecb390;
+            background-color: #F8F8F8;
 
 
         }
@@ -159,22 +161,13 @@
         .service-box .service-text h3 {
             padding-top: 15px;
         }
-
-        .three-layered :hover {
-            background-color: #40e0d0;
-        }
-
-        .seo-optimized :hover {
-            background-color: #f1c6d3;
-        }
-
-        .cloud-services :hover {
-            background-color: #fafba4;
-        }
-
-        .site-maintenance :hover {
-            background-color: #eef9bf;
-        }
+    .subheading{
+        font-family:'Courier New', Courier, monospace;
+    }
+    .jobs{
+        margin-left: 10px;
+        margin-right: 3px;
+    }
     </style>
     <nav class="navbar navbar-xs navbar-expand-sm navbar-dark bg-dark" style="padding-top:    0.25rem; /* 0px does not look good on small screens */
         padding-bottom: 0.25rem;
@@ -218,24 +211,12 @@
 
 
     <div class="jumbotron jumbo">
-        <div class="container">
-            {% for tofunmi in about %}
-
-            
-            {% if tofunmi.image1 %}
-                
-            
-            <img class="img-thumbnail mx-auto d-block" src="{{tofunmi.image1.url}}" alt="First slide" width="200"
-            height="40" class="center">
-            {% endif %}
-            {% endfor %}
-        </div>
 
         <div class="container text-center">
             <h2 class="subheading">Hello I'm</h2>
             <h1 class="mb-4">Tofunmi</h1>
             <h4>
-                an entry-level backend web developer, 🐍Python programmer and cloud architect.
+                an entry-level backend web developer, 🐍Python programming language lover, javascript developer and cloud architect.
                 </h6>
 
         </div>
@@ -253,46 +234,16 @@
             <div class="container valued">
 
 
-                <div class="container ">
-
-                    <h2 class="text-left"><span class="iconify" data-icon="mdi-light:diamond" data-inline="false"></span>&nbsp  Valued Deliverables</h2>
-                    <h6 class="text-left">
-                        you having a website that meets your requirements and above all your needs.
-                    </h6>
-                </div><br>
-
-                <div class="container ">
-
-                    <h2 class="text-left"><span class="iconify" data-icon="et:wallet" data-inline="false"></span>&nbsp  Affordable Services </h2>
-                    <h6 class="text-left">
-                        Plans that meets your budget, as little as it may be, theres is always a plan for it.
-                    </h6>
-                </div><br>
-
-                <div class="container ">
-                    <h2 class="text-left"><span class="iconify" data-icon="uil:arrow-growth" data-inline="false"></span>&nbsp  Scalable</h2>
-                    <h6 class="text-left">
-
-                        websites that are 100% scalable, they would grow in acordace to your needs and can be integrated with
-                        almost any frontend technology of your choice.
-                    </h6>
-                </div><br>
-
-
-
-
-
-                <div class="container ">
-                    <h2 class="text-left"><span class="iconify" data-icon="ic:baseline-vpn-lock" data-inline="false"></span>&nbsp  Secure </h2>
-
-
-                    <h6 class="text-left">
-                        security is the most important of all the other features listed that is why I take time to fool
-                        proof your website on the server, logic and client level. we also take advantage of cutting edge
-                        cloud technologies to protect your data from both internal and external threats
-                    </h6>
-
-                </div><br>
+                    <div class="container text-left">
+                            <h2 class="text-center">what I know</h2>
+                            {% for tofunmi in about %}
+                            <p>
+            
+                                
+                                {{tofunmi.offer}}
+                            </p>
+                            {% endfor %}
+                        </div>
 
             </div>
         </div>
@@ -300,23 +251,14 @@
 
         <div class="col-md-6 twin2">
             <div class="container">
-                <h2 class="text-left">About Me</h2>
+                <h2 class="text-center">About Me</h2>
                 {% for tofunmi in about %}
                   
                 <p class="text-left">{{tofunmi.about_me}}</p><br>
                 {% endfor %}
             </div>
 
-            <div class="container text-left">
-                <h2 class="text-left">what I know</h2>
-                {% for tofunmi in about %}
-                <p>
-
-                    
-                    {{tofunmi.offer}}
-                </p>
-                {% endfor %}
-            </div>
+            
 
 
 
@@ -326,117 +268,9 @@
 
 
     </div>
-
-
-
-    
-
-
-
-
-
-<a name='services_section'></a>
-    <div class="container mt-5" id="about">
-        <h1 class="text-center py-4">Services I Offer</h1>
-
-        <div class="row text-center mt-5">
-
-
-            <div class="col-md-3 three-layered ">
-                    <a href="{% url 'others:security' %}">
-                <div class="card shadow">
-                    <div class="card-body">
-                        <div class="py-3 text-center">
-                            <div class="row">
-
-                                <div class="col-lg-4 col-sm-4 col-md-4">
-                                    <i class="fa fa-lock card-img-top fa-4x text-danger" aria-hidden="true"></i>
-                                </div>
-                                <div class="col-lg-4 col-sm-4 col-md-4">
-                                    <i class="fa fa-lock card-img-top fa-4x text-warning" aria-hidden="true"></i>
-                                </div>
-                                <div class="col-lg-4 col-sm-4 col-md-4">
-                                    <i class="fa fa-lock card-img-top fa-4x text-success" aria-hidden="true"></i>
-                                </div>
-
-                            </div>
-                        </div>
-                        <div class="card-body">
-                            <h4 class="card-title">Web Development</h4>
-                            <p class="card-text"> we build high performance and secure websites for clients who are serious about growing their online presence.</p>
-                        </div>
-                    </div>
-                    </a>
-                </div>
-            </div>
-
-            <div class="col-md-3 seo-optimized ">
-                <div class="card shadow">
-                        <a href="{% url 'others:seo-optimization' %}">
-                    <div class="card-body">
-                        <div class="py-3 text-center"> <i class="fa fa-bar-chart card-img-top fa-4x text-danger"
-                                aria-hidden="true"></i></div>
-                        
-                        <div class="card-body">
-                            <h4 class="card-title">SEO Optimization</h4>
-                            <p class="card-text">
-                                Get your website easily discovered on search engines and better visitor-customer
-                                conversion chance
-                            </p>
-                        </div>
-                    </div>
-                </a>
-                </div>
-            </div>
-
-
-            <div class="col-md-3 cloud-services ">
-                <div class="card shadow">
-                        <a href="{% url 'others:cloud' %}">
-                    <div class="card-body">
-                        <div class="py-3 text-center"> <i class="fa fa-cloud card-img-top fa-4x text-info"
-                                aria-hidden="true"></i></div>
-                        <div class="card-body">
-                            <h4 class="card-title">Cloud services</h4>
-                            <p class="card-text">
-                                I am equiped with a vast knowledge on AWS and i offer varius AWS services in accordance to your needs e.g setting up IAM and assigning
-                                roles and permissions bases on your companes structures.
-                            </p>
-                        </div>
-                    </div>
-                    </a>
-                
-                </div>
-            </div>
-
-
-            <div class="col-md-3 site-maintenance ">
-                <div class="card shadow">
-                        <a href="{% url 'others:maintenance' %}">
-                    <div class="card-body">
-                        <div class="py-3 text-center"> <i class="fa fa-wrench card-img-top fa-4x text-secondary"
-                                aria-hidden="true"></i></div>
-                        <div class="card-body">
-                            <h4 class="card-title">Site Maintenance</h4>
-                            <p class="card-text">
-                                I provide site maintenance services and make both UI and contents changes as often as possible
-                            </p>
-                        </div>
-                    </div>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    </div>
-    </div>
-
-
-
     <hr>
 <h3 class="text-center">
-    Previous projects
+     projects
 </h3>
 <a name='project_section'></a>
     <div class="jumbotron" style="background-color: white;">
@@ -446,11 +280,11 @@
                 {% for tofunmi in job %}
 
 
-                <div class="col-md-3 e">
+                <div class="col-md-3 jobs">
                     <a href="{{tofunmi.url}}" target="_blank"
                         class="photography-entry img d-flex justify-content-center align-items-center">
                         <div class="overlay"></div>
-                    <div class="text text-center e">
+                    <div class="text text-center jobs">
                         <img src="{{tofunmi.image.url}}" class="image">
                         <br>
                         <div class="middle">
@@ -461,10 +295,9 @@
                     </a>
                     
                 </div><br><br><br>
-                <hr>
+                <hr><br>
 
                 {% endfor %}
-
             </div>
         </div>
     </div>
@@ -481,9 +314,17 @@
                             </li>
                         </h3><br><br>
                         <h3>
+                            <li>JavaScript &nbsp;<span class="iconify" data-icon="logos:javascript"
+                                    data-inline="false"></span></li>
+                        </h3><br><br>
+                        <h3>
                             <li>Django &nbsp;<span class="iconify" data-icon="logos:django" data-inline="false"></span>
                             </li>
                         </h3><br><br>
+                                <h3>
+                                <li>React &nbsp;<span class="iconify" data-icon="logos:react"
+                                        data-inline="false"></span></li>
+                            </h3><br><br>
                         <h3>
                             <li>Django Rest &nbsp;<span class="iconify" data-icon="mdi:api" data-inline="false"></span>
                             </li>
@@ -497,6 +338,9 @@
                                     data-inline="false"></span>/<span class="iconify" data-icon="logos:html-5"
                                     data-inline="false"></span></li>
                         </h3>
+                        <br><br>
+                        
+                        
 
 
                     </ul>

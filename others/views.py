@@ -124,7 +124,7 @@ def cloud(request):
             email = form.cleaned_data['email']
             subject = form.cleaned_data['subject']
             message = form.cleaned_data['message']
-            message="{0} has sent you a new message:\n\n{1}".format(email, forms.cleaned_data[message])
+            message="{0} has sent you a new message:\n\n{1}".format(email, form.cleaned_data[message])
             send_mail=('NEW Enquiry', message, subject, ['oketofoke@gmail.com'])
             return HttpResponse('success thank you for your message.')
     else:
