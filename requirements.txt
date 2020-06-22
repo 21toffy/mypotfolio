@@ -1,4 +1,4 @@
-Django==2.2.10
+Django==2.2.5
 django-crispy-forms==1.7.0
 python-decouple-3.3
 Pillow==6.2.2
