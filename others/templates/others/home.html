@@ -262,10 +262,7 @@
     <div class="jumbotron" style="background-color: white;">
         <div class="container text-center page-title">
             <div class="row no-gutters">
-
                 {% for tofunmi in job %}
-
-
                 <div class="col-md-3 jobs">
                     <a href="{{tofunmi.url}}" target="_blank"
                         class="photography-entry img d-flex justify-content-center align-items-center">
@@ -277,12 +274,9 @@
                             <div class="text">{{tofunmi.title}}</div>
                         </div>
                     </div>
-                    
-                    </a>
-                    
+                     </a>  
                 </div><br><br><br>
                 <hr><br>
-
                 {% endfor %}
             </div>
         </div>
@@ -325,13 +319,8 @@
                                     data-inline="false"></span></li>
                         </h3>
                         <br><br>
-                        
-                        
-
-
-                    </ul>
+                        </ul>
                 </div>
-
             </div>
             <hr>
             <hr>
@@ -351,8 +340,6 @@
                     </ul>
                     {% endif %}
                     <a href="mailto:oketofoke@gmail.com">tofunmi okedeji</a>
-
-
                     <form method="POST">
 
                         {% csrf_token %}
