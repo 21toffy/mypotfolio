@@ -10,6 +10,7 @@ import others.views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('jobs/',include('jobs.urls', namespace='jobs')),
+    path('blog/',include('blog.urls', namespace='blog')),
     path('',include('others.urls', namespace = 'others')),
 ]
 

@@ -20,6 +20,7 @@ INSTALLED_APPS = [
     'crispy_forms',
     'others',
     'jobs',
+    'blog',
 ]
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
